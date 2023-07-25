@@ -1,0 +1,82 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    background-color: #ac485a;
+    user-select: none;
+}
+
+.container,
+.input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container {
+    width: 380px;
+    min-width: 380px;
+    padding: 30px;
+    margin-inline: auto;
+}
+
+.logo {
+    width: 150px;
+    align-self: center;
+}
+
+.input-field,
+.add-button,
+.shopping-list li {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #532912;
+    border: 0;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.input-field {
+    background-color: #c3b9b2;
+    outline: none;
+}
+
+.add-button {
+    background-color: #f8dc9f;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #fba650;
+}
+
+.add-button:active {
+    transform: scale(0.95);
+}
+
+.shopping-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+
+.shopping-list li {
+    background-color: white;
+    flex-grow: 1;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.shopping-list li:hover {
+    background-color: #fcdfd6;
+}
