@@ -64,6 +64,7 @@ body {
 
 .shopping-list {
     list-style: none;
+    color: white;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;

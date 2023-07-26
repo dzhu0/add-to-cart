@@ -7,15 +7,15 @@ const appSettings = {
 
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
-const shoppingListInDB = ref(database, "shoppingList")
+const addToCart = ref(database, "add-to-cart")
 
 const inputFormEl = document.getElementById("input-form")
 const inputFieldEl = document.getElementById("input-field")
 const shoppingListEl = document.getElementById("shopping-list")
 
-inputFormEl.addEventListener("submit", addItemToShoppingList)
+inputFormEl.addEventListener("submit", addItemToCart)
 
-onValue(shoppingListInDB, snapshot => {
+onValue(addToCart, snapshot => {
     if (snapshot.exists()) {
         clearShoppingListEl()
 
@@ -25,11 +25,11 @@ onValue(shoppingListInDB, snapshot => {
     }
 })
 
-function addItemToShoppingList(e) {
+function addItemToCart(e) {
     e.preventDefault()
 
     const inputValue = inputFieldEl.value
-    inputValue && push(shoppingListInDB, inputValue)
+    inputValue && push(addToCart, inputValue)
 
     clearInputFieldEl()
 }
@@ -50,7 +50,7 @@ function appendItemToShoppingListEl(item) {
     newEl.textContent = itemValue
 
     newEl.addEventListener("click", () => {
-        remove(ref(database, `shoppingList/${itemID}`))
+        remove(ref(database, `add-to-cart/${itemID}`))
     })
 
     shoppingListEl.append(newEl)
