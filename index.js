@@ -13,6 +13,8 @@ const inputFormEl = document.getElementById("input-form")
 const inputFieldEl = document.getElementById("input-field")
 const shoppingListEl = document.getElementById("shopping-list")
 
+const timeoutIDs = {}
+
 inputFormEl.addEventListener("submit", addItemToCart)
 
 onValue(addToCart, snapshot => {
@@ -50,7 +52,17 @@ function appendItemToShoppingListEl(item) {
     newEl.textContent = itemValue
 
     newEl.addEventListener("click", () => {
-        remove(ref(database, `add-to-cart/${itemID}`))
+        newEl.classList.toggle("remove")
+
+        if (!timeoutIDs[itemID]) {
+            timeoutIDs[itemID] = setTimeout(() => {
+                remove(ref(database, `add-to-cart/${itemID}`))
+                delete timeoutIDs[itemID]
+            }, 1500)
+        } else {
+            clearTimeout(timeoutIDs[itemID])
+            delete timeoutIDs[itemID]
+        }
     })
 
     shoppingListEl.append(newEl)
