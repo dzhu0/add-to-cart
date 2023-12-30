@@ -5,7 +5,7 @@ import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com
 // Firebase configuration settings
 const appSettings = {
     // Uncomment the following line and add your FIREBASE URL
-    // databaseURL: 
+    databaseURL: "https://playground-e3130-default-rtdb.firebaseio.com/"
 }
 
 // Initialize Firebase app
