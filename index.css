@@ -87,3 +87,9 @@ body {
 .shopping-list li:hover {
     background-color: #7acefa;
 }
+
+.disclaimer {
+    font-family: 'Rubik', sans-serif;
+    color: red;
+    text-align: center;
+}
