@@ -1,4 +1,4 @@
-# Add to Cart
+# Add to Cart with Firebase Integration
 
 A web application using Firebase Realtime Database to implement a shopping cart functionality. Users can add items to the cart, and the items will be displayed with the option to remove them with a delay.
 
